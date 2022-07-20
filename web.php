@@ -30,10 +30,14 @@ Route::get('/quizc', function () {
     return view('Quizc');
 });
 
+// Add post functions to edit, delete and create and send it back to Employees.Blade
+// Need to link website to the sql database
+
 Route::get('/employees/index', function () {
-    return view('employees');
+    return view('Employees');
 });
 
+// Controller function, just copy and paste script into a controller
 Route::get('/employee/delete', function () {
     return view('delete');
 });
@@ -41,6 +45,7 @@ Route::get('/employee/delete', function () {
 Route::get('/employee/edit', function () {
     return view('edit');
 });
+
 Route::get('/employee/create', function () {
-    return view('edit');
+    return view('create');
 });

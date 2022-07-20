@@ -17,7 +17,7 @@ $ErrorMessage = "";
 $SuccessMessage = "";
 
 if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
-    // Shows data of item
+    // Shows data of employees
 
     if ( !isset($_GET["id"]) ) {
         header("location: /employees/index.php");
@@ -26,8 +26,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $id = $_GET["id"];
 
-    // Reads row of selected item from data base
-    $sql = "SELECT * FROM items WHERE id=$id"; 
+    // Reads row of selected employees from data base
+    $sql = "SELECT * FROM employees WHERE id=$id"; 
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
 
@@ -44,7 +44,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 else {
-    // Updates data of item
+    // Updates data of employee
 
     $id = $_POST["id"];
     $name = $_POST["name"];
@@ -57,7 +57,7 @@ else {
             $ErrorMessage = "All fields are required";
             break;
         }
-        $sql = "UPDATE items " .
+        $sql = "UPDATE employees " .
             "SET name = '$name', email = '$email', phone = '$phone', address = '$address' " .
             "WHERE id = $id";
         $result = $connection->query($sql);
@@ -110,21 +110,21 @@ else {
             <div class="row mb-3">
                 <label class="col-sm col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $email; ?>">
+                    <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
                 </div>
             </div>
             
              <div class="row mb-3">
                 <label class="col-sm col-form-label">Phone Number</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $phone; ?>">
+                    <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
                 </div>
             </div>
 
              <div class="row mb-3">
                 <label class="col-sm col-form-label">Address</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $address; ?>">
+                    <input type="text" class="form-control" name="address" value="<?php echo $address; ?>">
                 </div>
             </div>
 

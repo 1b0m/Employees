@@ -40,7 +40,7 @@
           }
 
           // Reads from database (table)
-          $sql = "SELECT * FROM items";
+          $sql = "SELECT * FROM employees";
           $result = $connection->query($sql);
 
 
@@ -56,7 +56,7 @@
                 <td>$row[name]</td>
                 <td>$row[email]</td>
                 <td>$row[phone]</td>
-                <td>$row[address</td>
+                <td>$row[address]</td>
                 <td>$row[created_at]</td>
                 <td>
                   <a class='btn btn-primary btn-sm' href='/employee/edit.php?id=$row[id]'>Edit</a>

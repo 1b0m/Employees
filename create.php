@@ -33,8 +33,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        // Add new item into database
-        $sql = "INSERT INTO items (name, amount) " .
+        // Add new employee into database
+        $sql = "INSERT INTO employees (name, email, phone, address) " .
                 "VALUES ('$name', '$email', '$phone', '$address')";
                 $result = $connection->query($sql);
     
@@ -80,7 +80,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         ?>
         <form method="post">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row mb-3">
                 <label class="col-sm col-form-label">Name</label>
                 <div class="col-sm-6">
@@ -91,28 +90,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label class="col-sm col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $email; ?>">
+                    <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
                 </div>
             </div>
             
              <div class="row mb-3">
                 <label class="col-sm col-form-label">Phone Number</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $phone; ?>">
+                    <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
                 </div>
             </div>
 
- <div class="row mb-3">
-                <label class="col-sm col-form-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $email; ?>">
-                </div>
-            </div>
-            
              <div class="row mb-3">
                 <label class="col-sm col-form-label">Address</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $address; ?>">
+                    <input type="text" class="form-control" name="address" value="<?php echo $address; ?>">
                 </div>
             </div>
 
@@ -137,7 +129,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="col-sm-3 d-grind">
-                <a class="btn btn-outline-primary" href="/shoppingcart/index.php" role="button">Cancel</a>
+                <a class="btn btn-outline-primary" href="/employee/index.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>
