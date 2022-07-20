@@ -9,7 +9,9 @@ $connection = new mysqli($servername, $username, $password, $database);
 
 $id = "";
 $name = "";
-$amount = "";
+$email = "";
+$phone = "";
+$address = "";
 
 $ErrorMessage = "";
 $SuccessMessage = "";
@@ -30,7 +32,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
     $row = $result->fetch_assoc();
 
     if (!$row) {
-        header("location: /shoppingcart/index.php");
+        header("location: /employees/index.php");
         exit;
     }
 
@@ -84,7 +86,7 @@ else {
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Employee</h2>
+        <h2>Edit Employee</h2>
 
         <?php
         if ( !empty($ErrorMessage) ) {
@@ -119,13 +121,6 @@ else {
                 </div>
             </div>
 
- <div class="row mb-3">
-                <label class="col-sm col-form-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="amount" value="<?php echo $email; ?>">
-                </div>
-            </div>
-            
              <div class="row mb-3">
                 <label class="col-sm col-form-label">Address</label>
                 <div class="col-sm-6">
@@ -156,7 +151,7 @@ else {
             </div>
 
             <div class="col-sm-3 d-grind">
-                <a class="btn btn-outline-primary" href="/shoppingcart/index.php" role="button">Cancel</a>
+                <a class="btn btn-outline-primary" href="/employees/index.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

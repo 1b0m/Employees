@@ -44,7 +44,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         
         $name = "";
-        $amount = "";
+        $email = "";
+        $phone = "";
+        $address = "";
+        
 
         $SuccessMessage = "Employee added correctly";
 

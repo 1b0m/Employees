@@ -14,6 +14,6 @@ if ( isset($_GET["id"]) ) {
     $connection->query($sql);
 }
 
-header("location: /shoppingcart/index.php");
+header("location: /employees/index.php");
 exit;
 ?>

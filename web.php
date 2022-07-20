@@ -31,5 +31,16 @@ Route::get('/quizc', function () {
 });
 
 Route::get('/employees/index', function () {
-    return view('Employees');
+    return view('employees');
+});
+
+Route::get('/employee/delete', function () {
+    return view('delete');
+});
+
+Route::get('/employee/edit', function () {
+    return view('edit');
+});
+Route::get('/employee/create', function () {
+    return view('edit');
 });

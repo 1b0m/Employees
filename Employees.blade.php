@@ -22,8 +22,6 @@
             <th>Address</th>
             <th>Created At</th>
             <th>Action</th>
-            
-            <th>Action</th>
           <tr>
         </thead>
         <tbody>
@@ -31,7 +29,7 @@
           $servername = "localhost";
           $username = "root";
           $password ="";
-          $database = "shopping-cart";
+          $database = "employees";
 
           // Creates A connection to database
           $connection = new mysqli($servername, $username, $password, $database);
